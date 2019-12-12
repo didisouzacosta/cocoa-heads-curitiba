@@ -28,6 +28,7 @@ final class GameListViewModel {
     
     private let gameRepository: GameRepositoryRepresentable
     private let spotlightManager = SpotlightManager()
+    private let shortcutItemManager = ShortcutItemManager()
     
     // MARK: - Public Methods
     
@@ -52,6 +53,7 @@ final class GameListViewModel {
     
     func didSelect(game: GameViewModel) {
         spotlightManager.index(item: game)
+        shortcutItemManager.register(game: game)
         delegate?.gameListViewModelDidSelect(gameIdentifier: game)
     }
     

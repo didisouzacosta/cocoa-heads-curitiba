@@ -32,10 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         applicationCoordinator?.start()
         
-        if let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
-            applicationCoordinator?.start(with: shortcutItem)
-        }
-        
         return true
     }
     

@@ -45,6 +45,7 @@
 		E1936CA3239FFE62003CDC30 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1936CA2239FFE62003CDC30 /* Coordinator.swift */; };
 		E1936CA6239FFF98003CDC30 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1936CA5239FFF98003CDC30 /* ApplicationCoordinator.swift */; };
 		E1936CA823A00226003CDC30 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1936CA723A00226003CDC30 /* BaseRepository.swift */; };
+		E1A9985323A20F6A00C1FA8D /* ShortcutItemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9985223A20F6A00C1FA8D /* ShortcutItemManager.swift */; };
 		E1D3AA9B23A1ECB0002AB696 /* SpotlightManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D3AA9A23A1ECB0002AB696 /* SpotlightManager.swift */; };
 		E1D3AA9E23A1EF95002AB696 /* SpotlightItemRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D3AA9D23A1EF95002AB696 /* SpotlightItemRepresentable.swift */; };
 /* End PBXBuildFile section */
@@ -146,6 +147,7 @@
 		E1936CA2239FFE62003CDC30 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Coordinator.swift; path = SpotlightAndShortcutItems/Sources/Coordinator.swift; sourceTree = SOURCE_ROOT; };
 		E1936CA5239FFF98003CDC30 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		E1936CA723A00226003CDC30 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
+		E1A9985223A20F6A00C1FA8D /* ShortcutItemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortcutItemManager.swift; sourceTree = "<group>"; };
 		E1D3AA9A23A1ECB0002AB696 /* SpotlightManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightManager.swift; sourceTree = "<group>"; };
 		E1D3AA9D23A1EF95002AB696 /* SpotlightItemRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightItemRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -234,6 +236,7 @@
 		E15F3C7F23A0EFC9004E72DF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E1A9985123A20F5600C1FA8D /* ShortcutItemManager */,
 				E1D3AA9C23A1EF7C002AB696 /* SpotlightManager */,
 				E15F3C8023A0EFDC004E72DF /* PageSlider */,
 			);
@@ -433,6 +436,14 @@
 				E1936CA5239FFF98003CDC30 /* ApplicationCoordinator.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		E1A9985123A20F5600C1FA8D /* ShortcutItemManager */ = {
+			isa = PBXGroup;
+			children = (
+				E1A9985223A20F6A00C1FA8D /* ShortcutItemManager.swift */,
+			);
+			path = ShortcutItemManager;
 			sourceTree = "<group>";
 		};
 		E1D3AA9C23A1EF7C002AB696 /* SpotlightManager */ = {
@@ -771,6 +782,7 @@
 				E1936C9D239FFCB6003CDC30 /* GameListController.swift in Sources */,
 				E15F3C8623A0F027004E72DF /* UIViewExtension.swift in Sources */,
 				E1936CA3239FFE62003CDC30 /* Coordinator.swift in Sources */,
+				E1A9985323A20F6A00C1FA8D /* ShortcutItemManager.swift in Sources */,
 				E1936C9F239FFCBF003CDC30 /* GameDetailController.swift in Sources */,
 				E1D3AA9E23A1EF95002AB696 /* SpotlightItemRepresentable.swift in Sources */,
 				E15F3C7E23A0EC7B004E72DF /* UIImageViewExtension.swift in Sources */,

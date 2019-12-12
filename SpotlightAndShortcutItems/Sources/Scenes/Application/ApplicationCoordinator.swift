@@ -41,7 +41,17 @@ final class ApplicationCoordinator: Coordinator {
     
     private func resetStack() {
         UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: false)
-        presenter.popToRootViewController(animated: false)
+        
+        if presenter.viewControllers.isEmpty {
+            start()
+        } else {
+            presenter.popToRootViewController(animated: false)
+        }
+    }
+    
+    private func present(game withIdentifier: GameIdentifiable) {
+        resetStack()
+        gameCoordinator?.gameListViewModelDidSelect(gameIdentifier: withIdentifier)
     }
     
 }
@@ -55,8 +65,7 @@ extension ApplicationCoordinator {
                 !identifier.isEmpty else {
                     return
             }
-            resetStack()
-            gameCoordinator?.gameListViewModelDidSelect(gameIdentifier: identifier)
+            present(game: identifier)
         default:
             start()
         }
@@ -65,8 +74,10 @@ extension ApplicationCoordinator {
     func start(with shortuctItem: UIApplicationShortcutItem) {
         switch shortuctItem.type {
         case "BestGame":
-            resetStack()
-            gameCoordinator?.gameListViewModelDidSelect(gameIdentifier: "34534tgefgdfg")
+            present(game: "34534tgefgdfg")
+        case "AnotherGame":
+            guard let identifier = shortuctItem.userInfo?["identifier"] else { return }
+            present(game: "\(identifier)")
         default:
             break
         }
