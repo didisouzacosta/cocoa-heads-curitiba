@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GameListController" customModule="SpotlightAndShortcutItems" customModuleProvider="target">
+            <connections>
+                <outlet property="sliderContainerView" destination="dh0-Rg-GUO" id="d6F-fY-7fh"/>
+                <outlet property="view" destination="iN0-l3-epB" id="abO-Jc-WQe"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BEST GAMES FOR ME IN 2019" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RM1-xv-6DK">
+                    <rect key="frame" x="48" y="76" width="220" height="67"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="67" id="9KA-1B-L3U"/>
+                        <constraint firstAttribute="height" constant="67" id="c7X-7E-2de"/>
+                        <constraint firstAttribute="width" constant="220" id="nm9-Tm-Qxn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="28"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dh0-Rg-GUO">
+                    <rect key="frame" x="0.0" y="151" width="414" height="679"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="dh0-Rg-GUO" firstAttribute="top" secondItem="RM1-xv-6DK" secondAttribute="bottom" constant="8" id="9t7-7y-KTW"/>
+                <constraint firstItem="RM1-xv-6DK" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="32" id="V0i-U6-2FA"/>
+                <constraint firstItem="dh0-Rg-GUO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Xtk-FP-ceq"/>
+                <constraint firstAttribute="trailing" secondItem="dh0-Rg-GUO" secondAttribute="trailing" id="Z3g-pn-9ug"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="dh0-Rg-GUO" secondAttribute="bottom" constant="32" id="avk-s9-e2l"/>
+                <constraint firstItem="RM1-xv-6DK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="48" id="xkX-dh-nn2"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="5.7971014492753632" y="137.94642857142856"/>
+        </view>
+    </objects>
+</document>

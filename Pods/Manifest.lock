@@ -1,0 +1,22 @@
+PODS:
+  - Kingfisher (5.10.1):
+    - Kingfisher/Core (= 5.10.1)
+  - Kingfisher/Core (5.10.1)
+  - MSPeekCollectionViewDelegateImplementation (2.0.0)
+
+DEPENDENCIES:
+  - Kingfisher
+  - MSPeekCollectionViewDelegateImplementation
+
+SPEC REPOS:
+  trunk:
+    - Kingfisher
+    - MSPeekCollectionViewDelegateImplementation
+
+SPEC CHECKSUMS:
+  Kingfisher: eb36b7dfcc78d60877051c92c119a2865972961a
+  MSPeekCollectionViewDelegateImplementation: 3091e9512b3cd03facdea3c02e57673a4a06246a
+
+PODFILE CHECKSUM: a0f21cdf5c260fa816c6782e986e7cc28124066f
+
+COCOAPODS: 1.8.4
