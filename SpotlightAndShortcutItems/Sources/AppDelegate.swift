@@ -31,6 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = applicationCoordinator?.presenter
         window?.makeKeyAndVisible()
         applicationCoordinator?.start()
+        
+        if let shortcutItem = launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+            applicationCoordinator?.start(with: shortcutItem)
+        }
+        
         return true
     }
     
@@ -39,6 +44,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
         applicationCoordinator?.start(with: userActivity)
         return true
+    }
+    
+    func application(_ application: UIApplication,
+                     performActionFor shortcutItem: UIApplicationShortcutItem,
+                     completionHandler: @escaping (Bool) -> Void) {
+        applicationCoordinator?.start(with: shortcutItem)
+        completionHandler(true)
     }
 
 }

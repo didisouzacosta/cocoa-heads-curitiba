@@ -62,4 +62,14 @@ extension ApplicationCoordinator {
         }
     }
     
+    func start(with shortuctItem: UIApplicationShortcutItem) {
+        switch shortuctItem.type {
+        case "BestGame":
+            resetStack()
+            gameCoordinator?.gameListViewModelDidSelect(gameIdentifier: "34534tgefgdfg")
+        default:
+            break
+        }
+    }
+    
 }
