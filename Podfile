@@ -1,4 +1,4 @@
-platform :ios, '13.0'
+platform :ios, '12.4'
 
 target 'Domain' do
   use_frameworks!
