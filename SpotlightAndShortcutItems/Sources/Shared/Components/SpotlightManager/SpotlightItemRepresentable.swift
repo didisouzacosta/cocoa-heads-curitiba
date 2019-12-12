@@ -6,6 +6,7 @@
 //  Copyright © 2019 CocoaHeadsCuritiba. All rights reserved.
 //
 
+import UIKit
 import CoreSpotlight
 import MobileCoreServices
 import Kingfisher
@@ -27,12 +28,17 @@ extension SpotlightItemRepresentable {
         attributeSet.contentDescription = spotlightItemContentDescription
         attributeSet.rating = spotlightItemRating
         
-        if let thumbnailURL = spotlightItemImageURL {
-            DispatchQueue.global().async {
-                attributeSet.thumbnailData = try? Data(contentsOf: thumbnailURL)
-                DispatchQueue.main.async {
-                    completion(attributeSet)
+        if let imageURL = spotlightItemImageURL {
+            KingfisherManager.shared.retrieveImage(with: imageURL) { response in
+                do {
+                    let result = try response.get()
+                    let imageData = result.image.jpegData(compressionQuality: 0.8)
+                    attributeSet.thumbnailData = imageData
+                } catch {
+                    print(error.localizedDescription)
                 }
+                
+                completion(attributeSet)
             }
         } else {
             completion(attributeSet)

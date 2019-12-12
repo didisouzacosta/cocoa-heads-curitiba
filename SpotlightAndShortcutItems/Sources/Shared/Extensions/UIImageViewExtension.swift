@@ -12,7 +12,7 @@ import Kingfisher
 public extension UIImageView {
     
     func load(from url: URL?,
-              placeholder: UIImage? = UIImage(named: "placeholder")) {
+              placeholder: UIImage? = nil) {
         guard let url = url else {
             self.image = placeholder
             return

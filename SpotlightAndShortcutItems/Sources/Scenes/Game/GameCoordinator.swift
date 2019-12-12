@@ -46,8 +46,8 @@ extension GameCoordinator: GameListViewModelDelegate {
         viewModel.delegate = self
         
         gameDetailController = GameDetailController(viewModel: viewModel)
-        gameDetailController!.modalPresentationStyle = .fullScreen
-        gameDetailController!.modalTransitionStyle = .crossDissolve
+//        gameDetailController!.modalPresentationStyle = .fullScreen
+//        gameDetailController!.modalTransitionStyle = .crossDissolve
         
         presenter.present(gameDetailController!, animated: true)
     }

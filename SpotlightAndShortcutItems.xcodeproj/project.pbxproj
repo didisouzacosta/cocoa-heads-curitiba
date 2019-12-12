@@ -82,6 +82,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		E157B43723A2B51600FB8AEF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E1936C87239FEAB3003CDC30 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -108,6 +118,7 @@
 		A1CE080572A6385099B8BB12 /* Pods-Domain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain.debug.xcconfig"; path = "Target Support Files/Pods-Domain/Pods-Domain.debug.xcconfig"; sourceTree = "<group>"; };
 		AE68EE6CBE3F5159779754D5 /* Pods-Domain-DomainTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain-DomainTests.release.xcconfig"; path = "Target Support Files/Pods-Domain-DomainTests/Pods-Domain-DomainTests.release.xcconfig"; sourceTree = "<group>"; };
 		B966B0E9AF06F0F6B2B6944D /* Pods-Domain-DomainTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain-DomainTests.debug.xcconfig"; path = "Target Support Files/Pods-Domain-DomainTests/Pods-Domain-DomainTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E157B42B23A2B51600FB8AEF /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		E15F3BA623A011DA004E72DF /* GamesData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GamesData.json; sourceTree = "<group>"; };
 		E15F3BA823A01694004E72DF /* GameListController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameListController.xib; sourceTree = "<group>"; };
 		E15F3BAA23A016B0004E72DF /* GameListViewModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewModelController.swift; sourceTree = "<group>"; };
@@ -462,6 +473,7 @@
 				30BCB4980D69D385BCCEA06C /* Pods_Domain_DomainTests.framework */,
 				8AA428542FE73D1B0363FD46 /* Pods_SpotlightAndShortcutItems.framework */,
 				7CFF887FC824A5E3399B5B88 /* Pods_SpotlightAndShortcutItemsTests.framework */,
+				E157B42B23A2B51600FB8AEF /* QuickLook.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -490,6 +502,7 @@
 				E1936C40239FEA21003CDC30 /* Resources */,
 				E1936C87239FEAB3003CDC30 /* Embed Frameworks */,
 				254C110ECCAB77DBA58E0D41 /* [CP] Embed Pods Frameworks */,
+				E157B43723A2B51600FB8AEF /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
