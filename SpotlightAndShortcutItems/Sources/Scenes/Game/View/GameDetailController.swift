@@ -36,16 +36,18 @@ final class GameDetailController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        loadGameDetail()
     }
     
     // MARK: - Private Methods
     
-    private func setup() {
-        coverImage.load(from: viewModel.coverURL)
-        nameLabel.text = viewModel.name
-        rateLabel.text = viewModel.rateDescription
-        descriptionLabel.text = viewModel.description
+    private func loadGameDetail() {
+        viewModel.loadGameDetail { [weak self] game in
+            self?.coverImage.load(from: game.coverURL)
+            self?.nameLabel.text = game.name
+            self?.rateLabel.text = game.rateDescription
+            self?.descriptionLabel.text = game.description
+        }
     }
     
     // MARK: Actions

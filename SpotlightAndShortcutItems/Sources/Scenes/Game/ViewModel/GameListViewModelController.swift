@@ -11,8 +11,8 @@ import Domain
 
 protocol GameListViewModelDelegate {
     
-    func GameListViewModelDidSelect(game: GameViewModel)
-    func GameListViewModelDisplay(error: Error)
+    func gameListViewModelDidSelect(gameIdentifier: GameIdentifiable)
+    func gameListViewModelDisplay(error: Error)
     
 }
 
@@ -44,7 +44,7 @@ final class GameListViewModel {
                         return a.rate > b.rate
                     })
             } catch {
-                delegate?.GameListViewModelDisplay(error: error)
+                delegate?.gameListViewModelDisplay(error: error)
             }
             completion()
         }
@@ -52,7 +52,7 @@ final class GameListViewModel {
     
     func didSelect(game: GameViewModel) {
         spotlightManager.index(item: game)
-        delegate?.GameListViewModelDidSelect(game: game)
+        delegate?.gameListViewModelDidSelect(gameIdentifier: game)
     }
     
 }

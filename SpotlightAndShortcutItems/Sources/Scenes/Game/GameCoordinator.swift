@@ -40,8 +40,9 @@ final class GameCoordinator: Coordinator {
 
 extension GameCoordinator: GameListViewModelDelegate {
     
-    func GameListViewModelDidSelect(game: GameViewModel) {
-        let viewModel = GameDetailViewModel(gameViewModel: game)
+    func gameListViewModelDidSelect(gameIdentifier: GameIdentifiable) {
+        let viewModel = GameDetailViewModel(gameIdentifier: gameIdentifier,
+                                            gameRepository: gameRepository)
         viewModel.delegate = self
         
         gameDetailController = GameDetailController(viewModel: viewModel)
@@ -51,7 +52,7 @@ extension GameCoordinator: GameListViewModelDelegate {
         presenter.present(gameDetailController!, animated: true)
     }
     
-    func GameListViewModelDisplay(error: Error) {
+    func gameListViewModelDisplay(error: Error) {
         gameDetailController?.show(error: error)
     }
     
@@ -59,8 +60,12 @@ extension GameCoordinator: GameListViewModelDelegate {
 
 extension GameCoordinator: GameDetailViewModelDelegate {
     
-    func GameDetailViewModelClose() {
+    func gameDetailViewModelClose() {
         gameDetailController?.dismiss(animated: true)
+    }
+    
+    func gameDetailViewModelDisplay(error: Error) {
+        gameDetailController?.show(error: error)
     }
     
 }

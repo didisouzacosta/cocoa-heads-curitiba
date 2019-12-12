@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct GameViewModel {
+public struct GameViewModel: GameIdentifiable {
     
     // MARK - Public Properties
     

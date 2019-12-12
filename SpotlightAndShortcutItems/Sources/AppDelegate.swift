@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Domain
 
 @UIApplicationMain
 
@@ -25,17 +26,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        setupApplicationCoordinator(with: window!)
+        applicationCoordinator = ApplicationCoordinator(presenter: UINavigationController(),
+                                                        gameRepository: GameRepository())
+        window?.rootViewController = applicationCoordinator?.presenter
+        window?.makeKeyAndVisible()
+        applicationCoordinator?.start()
         return true
     }
     
-    // MARK: - Private Methods
-    
-    private func setupApplicationCoordinator(with window: UIWindow) {
-        applicationCoordinator = ApplicationCoordinator(presenter: UINavigationController())
-        window.rootViewController = applicationCoordinator?.presenter
-        window.makeKeyAndVisible()
-        applicationCoordinator?.start()
+    func application(_ application: UIApplication,
+                     continue userActivity: NSUserActivity,
+                     restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        applicationCoordinator?.start(with: userActivity)
+        return true
     }
 
 }

@@ -11,7 +11,8 @@ import Domain
 
 protocol GameDetailViewModelDelegate {
     
-    func GameDetailViewModelClose()
+    func gameDetailViewModelClose()
+    func gameDetailViewModelDisplay(error: Error)
     
 }
 
@@ -21,34 +22,32 @@ final class GameDetailViewModel {
     
     var delegate: GameDetailViewModelDelegate?
     
-    var name: String {
-        return gameViewModel.name
-    }
-    
-    var rateDescription: String {
-        return gameViewModel.rateDescription
-    }
-    
-    var coverURL: URL {
-        return gameViewModel.coverURL
-    }
-    
-    var description: String {
-        return gameViewModel.description
-    }
-    
     // MARK: - Private Properties
     
-    private let gameViewModel: GameViewModel
+    private let gameIdentifier: GameIdentifiable
+    private let gameRepository: GameRepositoryRepresentable
     
     // MARK: - Public Methods
     
-    init(gameViewModel: GameViewModel) {
-        self.gameViewModel = gameViewModel
+    init(gameIdentifier: GameIdentifiable,
+         gameRepository: GameRepositoryRepresentable) {
+        self.gameIdentifier = gameIdentifier
+        self.gameRepository = gameRepository
+    }
+    
+    func loadGameDetail(completion: (GameViewModel) -> Void) {
+        gameRepository.fetch(by: gameIdentifier.identifier) { response in
+            do {
+                guard let game = try response.get() else { return }
+                completion(GameViewModel(game: game))
+            } catch {
+                delegate?.gameDetailViewModelDisplay(error: error)
+            }
+        }
     }
     
     func close() {
-        delegate?.GameDetailViewModelClose()
+        delegate?.gameDetailViewModelClose()
     }
     
 }
